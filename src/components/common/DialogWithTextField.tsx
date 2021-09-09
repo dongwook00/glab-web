@@ -9,26 +9,25 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   dialogTitleRoot: {
     textAlign: 'center',
-    fontWeight: 700,
   },
-  buttonRoot: {
+  dialogActionRoot: {
     padding: '8px 24px',
   },
 });
 
-const MDialog: React.FC = () => {
+const DialogWithTextField: React.FC = () => {
   const classes = useStyles();
 
   return (
     <div>
       <Dialog open={false} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
         <DialogTitle classes={{ root: classes.dialogTitleRoot }} id="form-dialog-title">
-          닉네임을 변경하시겠어요?
+          <b>닉네임을 변경하시겠어요?</b>
         </DialogTitle>
         <DialogContent>
-          <TextField autoFocus margin="dense" id="name" variant="outlined" fullWidth />
+          <TextField autoFocus id="name" variant="outlined" fullWidth />
         </DialogContent>
-        <DialogActions>
+        <DialogActions classes={{ root: classes.dialogActionRoot }}>
           <Button fullWidth variant="contained" color="primary">
             닉네임 변경
           </Button>
@@ -38,4 +37,4 @@ const MDialog: React.FC = () => {
   );
 };
 
-export default MDialog;
+export default DialogWithTextField;

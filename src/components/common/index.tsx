@@ -1,3 +1,4 @@
-import MDialog from './MDialog';
+import DialogWithTextField from './DialogWithTextField';
+import DialogWithDatePicker from './DialogWithDatePicker';
 
-export { MDialog };
+export { DialogWithTextField, DialogWithDatePicker };

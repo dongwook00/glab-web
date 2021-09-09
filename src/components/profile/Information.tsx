@@ -1,10 +1,11 @@
-import { MDialog } from '../common';
+import { DialogWithTextField, DialogWithDatePicker } from '../common';
 import styles from './Information.module.scss';
 
 const Information: React.FC = () => {
   return (
     <section className={styles.primary}>
-      <MDialog />
+      <DialogWithTextField />
+      <DialogWithDatePicker />
       <div className={styles.formGroup}>
         <div>닉네임</div>
         <div>헬로티모</div>
