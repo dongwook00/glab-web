@@ -21,7 +21,7 @@ const MDialog: React.FC = () => {
 
   return (
     <div>
-      <Dialog open={true} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
+      <Dialog open={false} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
         <DialogTitle classes={{ root: classes.dialogTitleRoot }} id="form-dialog-title">
           닉네임을 변경하시겠어요?
         </DialogTitle>
