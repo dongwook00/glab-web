@@ -1,0 +1,15 @@
+.primary {
+  padding: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  margin: 2rem 0;
+  
+  div:nth-child(1) {
+    flex: 0 0 30%;
+  }
+  div:nth-child(2) {
+    flex: 0 0 70%;
+  }
+}

@@ -1,0 +1,27 @@
+:root {
+  --height-header: 5rem;
+  --height-bottom-nav: 6rem;
+  --color-white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+};
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#root {
+  width: 31.25%;
+  min-width: 48rem;
+  margin: 0 auto;
+}

@@ -1,0 +1,18 @@
+.tab {
+  display: flex;
+  width: inherit;
+  min-width: inherit;
+  height: var(--height-header);
+  background: var(--color-white);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  .tabButtonGroup {
+    button {
+
+    }
+
+  }
+
+}

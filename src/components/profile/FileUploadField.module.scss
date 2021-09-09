@@ -1,0 +1,45 @@
+.fileUploadField {
+  position: relative;
+  border: 1px solid var(--color-bordoer-profile-image);
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.preview {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
