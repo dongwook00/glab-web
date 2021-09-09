@@ -1,4 +1,4 @@
-import { DialogWithTextField, DialogWithDatePicker } from '../common';
+import { DialogWithTextField, DialogWithDatePicker, FullDialogWithTextarea } from '../common';
 import styles from './Information.module.scss';
 
 const Information: React.FC = () => {
@@ -6,6 +6,7 @@ const Information: React.FC = () => {
     <section className={styles.primary}>
       <DialogWithTextField />
       <DialogWithDatePicker />
+      <FullDialogWithTextarea />
       <div className={styles.formGroup}>
         <div>닉네임</div>
         <div>헬로티모</div>
