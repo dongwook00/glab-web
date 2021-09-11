@@ -25,7 +25,7 @@ const FullDialogTextarea: React.FC = () => {
 
   return (
     <>
-      <Dialog fullScreen open={true}>
+      <Dialog fullScreen open={false}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton edge="start" aria-label="close">

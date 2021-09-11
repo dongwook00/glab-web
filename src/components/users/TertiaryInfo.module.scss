@@ -1,0 +1,9 @@
+.tertiaryInfo {
+  display: flex;
+  color: var(--color-tertiary-info);
+  margin-bottom: 1.5rem;
+  
+  .dot {
+    margin: 0 .5rem;
+  }
+}

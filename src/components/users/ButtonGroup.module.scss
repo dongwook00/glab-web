@@ -1,3 +1,23 @@
 .buttonGroup {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: .15fr .7fr .15fr;
+  grid-column-gap: .5rem;
+  margin-bottom: 1.5rem;
+  
+  button {
+    cursor: pointer;
+    border: none;
+    padding: .7rem 0;
+    border-radius: .5rem;
+    color: var(--color-white);
+    background: var(--color-primary-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttonClose {
+    background: var(--color-close-button);
+  }
 }
