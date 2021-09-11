@@ -1,11 +1,17 @@
 import styles from './PrimaryInfo.module.scss';
+import IPrimaryInfo from '../../interfaces/primaryInfo';
 
-const PrimaryInfo: React.FC = () => {
+interface PrimaryInfoProps {
+  info: IPrimaryInfo;
+}
+
+const PrimaryInfo: React.FC<PrimaryInfoProps> = (props) => {
+  const { nickname, age } = props.info;
   return (
     <div className={styles.primaryInfo}>
-      <div className={styles.nickname}>연두</div>
+      <div className={styles.nickname}>{nickname}</div>
       <div className={styles.comma}>,</div>
-      <div className={styles.age}>29</div>
+      <div className={styles.age}>{age}</div>
     </div>
   );
 };

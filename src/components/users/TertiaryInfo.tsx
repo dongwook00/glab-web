@@ -1,11 +1,16 @@
 import styles from './TertiaryInfo.module.scss';
+import ITertiaryInfo from '../../interfaces/tertiaryInfo';
 
-const TertiaryInfo: React.FC = () => {
+interface TertiaryInfoProps {
+  info: ITertiaryInfo;
+}
+const TertiaryInfo: React.FC<TertiaryInfoProps> = (props) => {
+  const { height, education } = props.info;
   return (
     <div className={styles.tertiaryInfo}>
-      <div className={styles.height}>157cm</div>
+      <div className={styles.height}>{height}cm</div>
       <div className={styles.dot}>·</div>
-      <div className={styles.education}>대학교</div>
+      <div className={styles.education}>{education}</div>
     </div>
   );
 };

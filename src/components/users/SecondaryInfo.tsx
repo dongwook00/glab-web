@@ -1,11 +1,16 @@
 import styles from './SecondaryInfo.module.scss';
+import ISecondaryInfo from '../../interfaces/secondaryInfo';
 
-const SecondaryInfo: React.FC = () => {
+interface SecondaryInfoProps {
+  info: ISecondaryInfo;
+}
+const SecondaryInfo: React.FC<SecondaryInfoProps> = (props) => {
+  const { jobField, location } = props.info;
   return (
     <div className={styles.secondaryInfo}>
-      <div className={styles.job}>디자인 관련직</div>
+      <div className={styles.job}>{jobField}</div>
       <div className={styles.dot}>·</div>
-      <div className={styles.location}>서울 송파구</div>
+      <div className={styles.location}>{location}</div>
     </div>
   );
 };
