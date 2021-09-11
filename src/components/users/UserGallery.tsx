@@ -7,17 +7,18 @@ import IUser from '../../interfaces/user';
 import IPrimaryInfo from '../../interfaces/primaryInfo';
 import ISecondaryInfo from '../../interfaces/secondaryInfo';
 import ITertiaryInfo from '../../interfaces/tertiaryInfo';
+import Pagination from './Pagination';
 
 interface UserGalleryProps {
   user: IUser;
 }
 
 const UserGallery: React.FC<UserGalleryProps> = (props) => {
-  const [imageIndex, setImageIndex] = useState(0);
+  const [page, setPage] = useState(0);
   const [primaryInfo, setPrimaryInfo] = useState<IPrimaryInfo>();
   const [secondaryInfo, setSecondaryInfo] = useState<ISecondaryInfo>();
   const [tertiaryInfo, setTertiaryInfo] = useState<ITertiaryInfo>();
-  const photoUrl = props.user.images[imageIndex].url;
+  const photoUrl = props.user.images[page].url;
 
   useEffect(() => {
     const getPrimaryInfo = (info: IUser) => {
@@ -42,12 +43,13 @@ const UserGallery: React.FC<UserGalleryProps> = (props) => {
     setPrimaryInfo(primary);
     setSecondaryInfo(secondary);
     setTertiaryInfo(tertiary);
-    setImageIndex(0);
-  }, [imageIndex]);
+    setPage(0);
+  }, [page]);
 
   return (
     <div className={styles.userGallery}>
       <UserGalleryFigure>
+        <Pagination page={page} length={props.user.images.length} />
         <Figures photoUrl={photoUrl} />
         <Figcaption primaryInfo={primaryInfo} secondaryInfo={secondaryInfo} tertiaryInfo={tertiaryInfo} />
       </UserGalleryFigure>
