@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './UserGallery.module.scss';
 import UserGalleryFigure from './UserGalleryFigure';
 import Figures from './Figures';
@@ -14,11 +14,12 @@ interface UserGalleryProps {
 }
 
 const UserGallery: React.FC<UserGalleryProps> = (props) => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState<number>(0);
   const [primaryInfo, setPrimaryInfo] = useState<IPrimaryInfo>();
   const [secondaryInfo, setSecondaryInfo] = useState<ISecondaryInfo>();
   const [tertiaryInfo, setTertiaryInfo] = useState<ITertiaryInfo>();
-  const photoUrl = props.user.images[page].url;
+  const [imageUrl, setImageUrl] = useState<string>(props.user.images[0].url);
+  const imageLength = props.user.images.length;
 
   useEffect(() => {
     const getPrimaryInfo = (info: IUser) => {
@@ -43,14 +44,33 @@ const UserGallery: React.FC<UserGalleryProps> = (props) => {
     setPrimaryInfo(primary);
     setSecondaryInfo(secondary);
     setTertiaryInfo(tertiary);
-    setPage(0);
+    setImageUrl(props.user.images[page].url);
   }, [page]);
+
+  const onPhotoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+
+    const isPrev = x < 110 && y > 30 && y < 400;
+    const isNext = x > 330 && y > 30 && y < 400;
+
+    setPage((prev) => {
+      const noMove = (isPrev && prev === 0) || (isNext && prev === imageLength - 1);
+      if (noMove) return prev;
+
+      if (isNext) return prev + 1;
+      else if (isPrev) return prev - 1;
+
+      return prev;
+    });
+  };
 
   return (
     <div className={styles.userGallery}>
-      <UserGalleryFigure>
-        <Pagination page={page} length={props.user.images.length} />
-        <Figures photoUrl={photoUrl} />
+      <UserGalleryFigure onClick={onPhotoClick}>
+        <Pagination page={page} length={imageLength} />
+        <Figures photoUrl={imageUrl} />
         <Figcaption primaryInfo={primaryInfo} secondaryInfo={secondaryInfo} tertiaryInfo={tertiaryInfo} />
       </UserGalleryFigure>
     </div>

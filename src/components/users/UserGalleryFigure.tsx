@@ -1,7 +1,13 @@
 import styles from './UserGalleryFigure.module.scss';
-
-const UserGalleryFigure: React.FC = (props) => {
-  return <figure className={styles.userGalleryFigure}>{props.children}</figure>;
+interface UserGalleryFigurePros {
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+}
+const UserGalleryFigure: React.FC<UserGalleryFigurePros> = (props) => {
+  return (
+    <figure onClick={props.onClick} className={styles.userGalleryFigure}>
+      {props.children}
+    </figure>
+  );
 };
 
 export default UserGalleryFigure;
