@@ -1,7 +1,15 @@
 import { DialogWithTextField, DialogWithDatePicker, FullDialogWithTextarea } from '../common';
 import styles from './Information.module.scss';
+import { useAppDispatch } from '../../redux/hooks';
+import { test } from '../../redux/profileSlice';
 
 const Information: React.FC = () => {
+  const dispatch = useAppDispatch();
+
+  const onClick = () => {
+    dispatch(test(11));
+  };
+
   return (
     <section className={styles.primary}>
       <DialogWithTextField />
@@ -15,7 +23,7 @@ const Information: React.FC = () => {
         <div>성별</div>
         <div>남성</div>
       </div>
-      <div className={styles.formGroup}>
+      <div className={styles.formGroup} onClick={onClick}>
         <div>생일</div>
         <div>1985-11-10</div>
       </div>
