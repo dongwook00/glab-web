@@ -1,17 +1,12 @@
-import styles from './Secondary.module.scss';
+import { LayoutProfileSection, LayoutFormGroup } from '../layout';
+// import styles from './Secondary.module.scss';
 
 const Secondary: React.FC = () => {
   return (
-    <section className={styles.secondary}>
-      <div className={styles.formGroup}>
-        <div className={styles.type}>키</div>
-        <div className={styles.value}>171cm</div>
-      </div>
-      <div className={styles.formGroup}>
-        <div className={styles.type}>체형</div>
-        <div className={styles.value}>보통</div>
-      </div>
-    </section>
+    <LayoutProfileSection>
+      <LayoutFormGroup type="키">171cm</LayoutFormGroup>
+      <LayoutFormGroup type="체형">보통</LayoutFormGroup>
+    </LayoutProfileSection>
   );
 };
 
