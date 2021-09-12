@@ -4,5 +4,9 @@
     height: 73vh;
     object-fit: cover;
     border-radius: 1rem;
+
+    @media (max-width: 380px) {
+      height: 90vh;
+    }
   }
 }

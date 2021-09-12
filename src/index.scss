@@ -33,12 +33,14 @@ html {
 
 body {
   font-size: 1.6rem;
-}
-
-#root {
   width: 31.25%;
   min-width: 48rem;
   margin: 0 auto;
+}
+
+#root {
+  width: inherit;
+  min-width: inherit;
 }
 #filled-multiline-static {
   height: 50vh;
