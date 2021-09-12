@@ -1,46 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+#### 1. 프로젝트 소개
 
-In the project directory, you can run:
+글램 어플의 일부 화면 및 기능을 가진 웹 앱입니다.
+(라이브 데모)[]
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 2. 실행
 
-### `yarn test`
+```shell
+npm i
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 3. 폴더구조 및 화면
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+`-- src
+    |-- App.tsx
+    |-- assets
+    |   |-- dummydata
+    |   `-- images
+    |-- components
+    |   |-- BottomNav
+    |   |-- common
+    |   |-- layout
+    |   |-- profile
+    |   |-- tab
+    |   `-- users
+    |-- index.scss
+    |-- index.tsx
+    |-- interfaces
+    |-- pages
+    `-- redux
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> `index.tsx`  앱 시작 파일
+>
+> `index.scss`  전역 스타일 정의
+>
+> `App.tsx`  페이지 정의; 전체 레이아웃과 컴포넌트들을 사용
+>
+> `components/bottomNav`  하단 네비게이션 메뉴 
+>
+> `components/common`   공통으로 사용하는 컴포넌트들; 예: 버튼, 다이어로그 등
+>
+> `components/layout` 레이아웃 컴포넌트
+>
+> `components/profile`  프로필 화면
+>
+> `components/tab`  홈 화면 상단 탭
+>
+> `components/users`  홈 화면 이성 유저들의 리스트
+>
+> `redux`   리덕스 설정 및 상태관리 리듀서들 정의
 
-### `yarn eject`
+![sample](public/sample.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 4. 기타
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 일부 아이콘들은 최적화를 위해 이미지 스프라이트를 적용하였습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 홈 화면은 컴포넌트 내부에서 상태를 관리합니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 홈 화면은 css라이브러리를 사용하지 않았습니다.
 
-## Learn More
+- 프로필 화면은 리덕스를 통해서 상태를 관리합니다:`redux-toolkit` `redux-persist`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 프로필 화면의 Dialog들은 `material-ui`를 사용하였습니다.
