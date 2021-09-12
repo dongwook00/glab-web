@@ -1,7 +1,13 @@
-.container {
+.profileHeader {
   position: fixed;
+  width: inherit;
+  min-width: inherit;
   top: 0;
   z-index: 1;
   display: flex;
   height: var(--height-header);
+  background: var(--color-white);
+  align-items: center;
+  border-bottom: var(--border-default);
+  padding-left: 1.5rem;
 }

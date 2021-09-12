@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         </svg>
       </div>
       <div className={styles.title}>
-        <h5>헤더</h5>
+        <h3>프로필 수정</h3>
       </div>
     </>
   );

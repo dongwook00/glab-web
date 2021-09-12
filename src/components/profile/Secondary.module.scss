@@ -1,0 +1,18 @@
+.secondary {
+  padding: 1rem;
+  border-bottom: var(--border-default);
+
+  .formGroup {
+    display: flex;
+    margin: 2rem 0;
+  
+    .type {
+      flex: .3;
+    }
+    .value {
+      flex: .7;
+      color: var(--color-primary);
+      font-weight: 400;
+    }
+  }
+}
