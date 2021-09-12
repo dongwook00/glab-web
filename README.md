@@ -3,7 +3,7 @@
 #### 1. 프로젝트 소개
 
 글램 어플의 일부 화면 및 기능을 가진 웹 앱입니다.<br />
-(라이브 데모)[]
+[라이브 데모](https://613e1da8bee6dc00085a48db--nostalgic-aryabhata-93a8e7.netlify.app/#/)
 
 
 
