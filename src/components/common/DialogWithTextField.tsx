@@ -10,8 +10,11 @@ import { useAppDispatch } from '../../redux/hooks';
 import { update } from '../../redux/profileSlice';
 
 interface DialogWithTextFieldProps {
+  title: string;
+  button: string;
   value: string;
   open: boolean;
+  updateKey: string;
   onClose: () => void;
 }
 
@@ -34,7 +37,7 @@ const DialogWithTextField: React.FC<DialogWithTextFieldProps> = (props) => {
   }, [props.value, props.open]);
 
   const onButtonClick = () => {
-    dispatch(update({ type: 'nickname', value }));
+    dispatch(update({ type: props.updateKey, value }));
     props.onClose();
   };
 
@@ -42,7 +45,7 @@ const DialogWithTextField: React.FC<DialogWithTextFieldProps> = (props) => {
     <div>
       <Dialog open={props.open} onClose={props.onClose} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
         <DialogTitle classes={{ root: classes.dialogTitleRoot }} id="form-dialog-title">
-          <b>닉네임을 변경하시겠어요?</b>
+          <b>{props.title}</b>
         </DialogTitle>
         <DialogContent>
           <TextField
@@ -56,7 +59,7 @@ const DialogWithTextField: React.FC<DialogWithTextFieldProps> = (props) => {
         </DialogContent>
         <DialogActions classes={{ root: classes.dialogActionRoot }}>
           <Button fullWidth variant="contained" color="primary" onClick={onButtonClick}>
-            닉네임 변경
+            {props.button}
           </Button>
         </DialogActions>
       </Dialog>

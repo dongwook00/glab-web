@@ -40,7 +40,7 @@ const DialogWithDatePicker: React.FC<DialogWithDatePickerProps> = (props) => {
 
   return (
     <div>
-      <Dialog open={props.open} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
+      <Dialog open={props.open} onClose={props.onClose} aria-labelledby="form-dialog-title" maxWidth="xs" fullWidth>
         <DialogTitle classes={{ root: classes.dialogTitleRoot }} id="form-dialog-title">
           <b>생일을 변경하시겠어요?</b>
         </DialogTitle>

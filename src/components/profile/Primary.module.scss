@@ -1,3 +1,6 @@
-.nickname {
+.dialog {
   cursor: pointer;
+  &:hover {
+    font-weight: 700;
+  }
 }
