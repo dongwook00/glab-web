@@ -3,8 +3,6 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import logger from 'redux-logger';
 import { combineReducers } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from './saga';
 import profileReducer from './profileSlice';
 
 const reducers = combineReducers({
@@ -18,15 +16,12 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
-const sagaMiddleware = createSagaMiddleware();
-const additionalMiddlewares = process.env.NODE_ENV === 'development' ? [sagaMiddleware, logger] : [sagaMiddleware];
+const additionalMiddlewares = process.env.NODE_ENV === 'development' ? [logger] : [];
 
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false, thunk: false }).concat(additionalMiddlewares),
 });
-
-sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
