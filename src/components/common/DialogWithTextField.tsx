@@ -9,15 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useAppDispatch } from '../../redux/hooks';
 import { update } from '../../redux/profileSlice';
 
-interface DialogWithTextFieldProps {
-  title: string;
-  button: string;
-  value: string;
-  open: boolean;
-  updateKey: string;
-  onClose: () => void;
-}
-
 const useStyles = makeStyles({
   dialogTitleRoot: {
     textAlign: 'center',
@@ -26,6 +17,15 @@ const useStyles = makeStyles({
     padding: '8px 24px',
   },
 });
+
+interface DialogWithTextFieldProps {
+  title: string;
+  button: string;
+  value: string;
+  open: boolean;
+  updateKey: string;
+  onClose: () => void;
+}
 
 const DialogWithTextField: React.FC<DialogWithTextFieldProps> = (props) => {
   const dispatch = useAppDispatch();

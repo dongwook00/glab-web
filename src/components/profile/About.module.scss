@@ -1,9 +1,13 @@
 .about {
   margin: .8rem 0;
+  pre {
+    color: var(--color-primary);
+  }
 }
 .value {
   font-size: 1.5rem;
   color: var(--color-about-placeholder);
+  cursor: pointer;
 }
 .info {
   font-size: 1.5rem;
