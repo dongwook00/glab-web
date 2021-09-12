@@ -5,6 +5,7 @@
   --color-white: #fff;
   --color-black: #000;
   --color-gray: #6d6d6d;
+  --color-bottom-nav: #fafafa;
   --color-default-border: #eee;
   --color-chip-bg: rgba(255, 255, 255, .3);
   --color-tertiary-info: darkgrey;
@@ -44,4 +45,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   padding: 2rem;
+}
+pre {
+  font-family: inherit;
 }

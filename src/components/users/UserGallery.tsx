@@ -18,6 +18,7 @@ const UserGallery: React.FC<UserGalleryProps> = (props) => {
   const [primaryInfo, setPrimaryInfo] = useState<IPrimaryInfo>();
   const [secondaryInfo, setSecondaryInfo] = useState<ISecondaryInfo>();
   const [tertiaryInfo, setTertiaryInfo] = useState<ITertiaryInfo>();
+  const [aboutInfo, setAboutInfo] = useState<string | null>();
   const [imageUrl, setImageUrl] = useState<string>(props.user.images[0].url);
   const imageLength = props.user.images.length;
 
@@ -36,14 +37,19 @@ const UserGallery: React.FC<UserGalleryProps> = (props) => {
       const { height, education } = info;
       return { height, education };
     };
+    const getAboutInfo = (info: IUser) => {
+      return info.about;
+    };
     const { user } = props;
     const primary = getPrimaryInfo(user);
     const secondary = getSecondaryInfo(user);
     const tertiary = getTertiaryInfo(user);
+    const about = getAboutInfo(user);
 
     setPrimaryInfo(primary);
     setSecondaryInfo(secondary);
     setTertiaryInfo(tertiary);
+    setAboutInfo(about);
     setImageUrl(props.user.images[page].url);
   }, [page]);
 
@@ -71,7 +77,7 @@ const UserGallery: React.FC<UserGalleryProps> = (props) => {
       <UserGalleryFigure onClick={onPhotoClick}>
         <Pagination page={page} length={imageLength} />
         <Figures photoUrl={imageUrl} />
-        <Figcaption primaryInfo={primaryInfo} secondaryInfo={secondaryInfo} tertiaryInfo={tertiaryInfo} />
+        <Figcaption page={page} about={aboutInfo} primaryInfo={primaryInfo} secondaryInfo={secondaryInfo} tertiaryInfo={tertiaryInfo} />
       </UserGalleryFigure>
     </div>
   );

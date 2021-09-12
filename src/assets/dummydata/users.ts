@@ -7,7 +7,9 @@ const users: IUser[] = [
     gender: 'female',
     birthday: '1990-01-02',
     location: '서울 강남구',
-    about: '안녕하세요',
+    about: `안녕하세요
+    잘부탁드립니다! 법원은 최고법원인. 
+    모든 국민은 능력에 따라 균등하게 교육을 받을.`,
     height: 170,
     bodyType: '보통',
     jobName: null,
@@ -72,7 +74,9 @@ const users: IUser[] = [
     gender: 'female',
     birthday: '1998-03-11',
     location: '서울 용산구',
-    about: null,
+    about: `법원은 최고법원인 대법원과 각급법원으로 조직된다. 
+    모든 국민은 능력에 따라 균등하게 교육을 받을. 
+    비상계엄하의.`,
     height: 163,
     bodyType: '마름',
     jobName: null,

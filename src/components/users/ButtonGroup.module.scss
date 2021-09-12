@@ -16,9 +16,15 @@
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
+    &:hover {
+      background: #1378f2;
+    }
   }
   
   .buttonClose {
     background: var(--color-close-button);
+    &:hover {
+      background: #3b3939;
+    }
   }
 }

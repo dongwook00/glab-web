@@ -12,15 +12,34 @@ interface FigcaptionProps {
   primaryInfo?: IPrimaryInfo;
   secondaryInfo?: ISecondaryInfo;
   tertiaryInfo?: ITertiaryInfo;
+  about: string | null | undefined;
+  page: number;
 }
 
 const Figcaption: React.FC<FigcaptionProps> = (props) => {
+  const { page, about, primaryInfo, secondaryInfo, tertiaryInfo } = props;
+  let content;
+
+  if (page === 0 && about !== null) {
+    content = (
+      <div style={{ marginBottom: '1.5rem' }}>
+        <pre>{about}</pre>
+      </div>
+    );
+  } else {
+    content = (
+      <>
+        {secondaryInfo && <SecondaryInfo info={secondaryInfo} />}
+        {tertiaryInfo && <TertiaryInfo info={tertiaryInfo} />}
+      </>
+    );
+  }
+
   return (
     <figcaption className={styles.figcaption}>
       <Chip />
-      {props.primaryInfo && <PrimaryInfo info={props.primaryInfo} />}
-      {props.secondaryInfo && <SecondaryInfo info={props.secondaryInfo} />}
-      {props.tertiaryInfo && <TertiaryInfo info={props.tertiaryInfo} />}
+      {primaryInfo && <PrimaryInfo info={primaryInfo} />}
+      {content}
       <ButtonGroup />
     </figcaption>
   );
