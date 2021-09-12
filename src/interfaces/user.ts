@@ -1,6 +1,10 @@
 import IImages from './images';
 
-export default interface IUsers {
+interface IUsersKey {
+  [key: string]: string | number | null | IImages[] | undefined;
+}
+
+export default interface IUsers extends IUsersKey {
   id: number;
   nickname: string;
   gender: string;

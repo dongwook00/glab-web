@@ -1,4 +1,8 @@
 .profileSection {
   padding: 1rem;
   border-bottom: var(--border-default);
+
+  &.about > * {
+    margin: 1rem 0;
+  }
 }

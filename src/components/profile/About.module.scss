@@ -1,9 +1,11 @@
 .about {
-  padding: 1rem;
-  border-bottom: var(--border-default);
-
-  & > * {
-    margin: 1rem 0;
-  }
-  
+  margin: .8rem 0;
+}
+.value {
+  font-size: 1.5rem;
+  color: var(--color-about-placeholder);
+}
+.info {
+  font-size: 1.5rem;
+  color: var(--color-about-info);
 }
