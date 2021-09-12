@@ -1,37 +1,12 @@
-import { DialogWithTextField, DialogWithDatePicker, FullDialogWithTextarea } from '../common';
-import styles from './Information.module.scss';
-import { useAppDispatch } from '../../redux/hooks';
-import { test } from '../../redux/profileSlice';
+import Primary from './Primary';
+import About from './About';
 
 const Information: React.FC = () => {
-  const dispatch = useAppDispatch();
-
-  const onClick = () => {
-    dispatch(test(11));
-  };
-
   return (
-    <section className={styles.primary}>
-      <DialogWithTextField />
-      <DialogWithDatePicker />
-      <FullDialogWithTextarea />
-      <div className={styles.formGroup}>
-        <div>닉네임</div>
-        <div>헬로티모</div>
-      </div>
-      <div className={styles.formGroup}>
-        <div>성별</div>
-        <div>남성</div>
-      </div>
-      <div className={styles.formGroup} onClick={onClick}>
-        <div>생일</div>
-        <div>1985-11-10</div>
-      </div>
-      <div className={styles.formGroup}>
-        <div>위치</div>
-        <div>서울시 강남구</div>
-      </div>
-    </section>
+    <>
+      <Primary />
+      <About />
+    </>
   );
 };
 

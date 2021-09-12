@@ -3,8 +3,8 @@ import styles from './Images.module.scss';
 
 const Images: React.FC = () => {
   return (
-    <section>
-      <div className={styles.images}>
+    <section className={styles.images}>
+      <div className={styles.imageUploader}>
         <FileUploadField />
         <FileUploadField />
         <FileUploadField />
